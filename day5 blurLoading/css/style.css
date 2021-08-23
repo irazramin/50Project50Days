@@ -1,0 +1,31 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #f3f3f3;
+    overflow: hidden;
+}
+
+
+.bg {
+    top: -30px;
+    left: -30px;
+    filter: blur(0px);
+    z-index: -1;
+    width: calc(100vw + 60px);
+    height: calc(100vh + 60px);
+    position: absolute;
+    background: url('https://unsplash.com/photos/nyNspiBHHWg/download?force=true&w=1920');
+}
+
+.loading-text{
+    color: #fff;
+    font-size: 50px;
+}
