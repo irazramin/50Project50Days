@@ -3,7 +3,7 @@ const progress = document.getElementById("progress");
 const next = document.getElementById("next");
 const prev = document.getElementById("prev");
 let currentActive = 1;
-let per=1;
+let per=0;
 next.addEventListener("click", () => {
   currentActive++;
 
