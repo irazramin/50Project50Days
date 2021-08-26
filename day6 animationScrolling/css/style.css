@@ -1,0 +1,38 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex-direction: column;
+    overflow-x: hidden;
+}
+
+.box {
+    background: blueviolet;
+    width: 400px;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: burlywood;
+    border-radius: 5px;
+    box-shadow: 5px 6px 15px rgb(154, 78, 253);
+    margin: 10px 0;
+    transform: translateX(220%);
+    transition: transform 0.4s ease;
+}
+
+.box:nth-of-type(even){
+    transform: translateX(-220%);
+}
+
+.box.show{
+    transform: translateX(0);
+}
