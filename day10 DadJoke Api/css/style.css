@@ -1,0 +1,50 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    flex-direction: column;
+    background-color: purple;
+    padding: 20px;
+
+}
+
+.container {
+    background-color: #fff;
+    padding: 20px 50px;
+    border-radius: 10px;
+    max-width: 100%;
+    width: 800px;
+    text-align: center;
+
+}
+
+.container h3 {
+    font-size: 15px;
+    color: #555;
+    letter-spacing: 3px;
+}
+
+.container .joke {
+    font-size: 25px;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.container .btn {
+    padding: 10px 30px;
+    background-color: purple;
+    border: 0;
+    cursor: pointer;
+    color: #fff;
+    font-size: 15px;
+    border-radius: 5px;
+    box-shadow: 10px 7px 6px rgba(56, 32, 32, 0.1), 10px 17px 16px rgba(56, 32, 32, 0.1);
+}
