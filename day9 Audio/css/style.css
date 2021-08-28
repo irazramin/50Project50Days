@@ -1,0 +1,36 @@
+*{
+    box-sizing: border-box;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    flex-direction: column;
+    background-color: paleturquoise;
+    flex-wrap: wrap;
+    text-align: center;
+}
+
+.buttons{
+    margin: 10px;
+    padding: 15px 30px;
+    border:none;
+    background-color: rgba(255,255,255,0.7);
+    cursor: pointer;
+    border-radius: 5px;
+    box-shadow: 1px 7px 15px skyblue;
+    
+
+}
+.buttons:focus{
+    outline: 0;
+}
+.buttons:hover{
+    box-shadow: 0 0 0 0;
+    background-color: rgb(236, 247, 252);
+}
