@@ -5,6 +5,7 @@ const joke = document.querySelector('.joke');
 jokeBtn.addEventListener('click', getJokeApi)
 
 getJokeApi();
+
 async function getJokeApi(){
     const config = {
         headers: {
