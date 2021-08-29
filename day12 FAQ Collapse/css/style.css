@@ -1,0 +1,93 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #f0f0f0;
+}
+
+h3 {
+    margin: 50px 0 30px;
+}
+
+.faq-container {
+    
+    max-width: 600px;
+    margin: 0 auto;
+
+}
+
+.faq {
+    border: 1px solid #999;
+    margin: 20px;
+    padding: 20px;
+    position: relative;
+    border-radius: 10px;overflow: hidden;
+    transition: .3s ease-in;
+}
+
+.faq p {
+    display: none;
+    margin-bottom: 20px;
+}
+
+.faq.active {
+    background-color: #fff;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1),
+        0 3px 6px rgba(0, 0, 0, 0.1);
+}
+
+.faq.active p {
+    display: block;
+}
+.faq.active::before,
+.faq.active::after{
+    content: '\f075';
+    font-family: 'font awesome 5 free';
+    font-size: 7rem;
+    color: turquoise;
+    opacity: 0.2;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+}
+.faq.active::before{
+    top: -10px;
+    left: -30px;
+    transform: rotateY(180deg);
+}
+
+.faq-toggle {
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+    width: 30px;
+    height: 30px;
+    border: 0;
+    border-radius: 50%;
+}
+
+.faq-toggle .fa-times{
+    display: none;
+}
+.faq.active .faq-toggle .fa-times{
+    display: block;
+}
+.faq.active .faq-toggle .fa-chevron-down{
+    display: none;
+}
+.faq-toggle:focus{
+    outline: 0;
+  
+
+}
+
+.faq.active .faq-toggle{
+    background-color: #999;
+}
