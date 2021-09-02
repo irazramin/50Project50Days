@@ -1,0 +1,24 @@
+*{
+    box-sizing: border-box;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+   background-color: slateblue;
+}
+
+.counter-container{
+    margin: 30px;
+    text-align: center;
+    color: #fff;
+}
+.counter-container .count{
+    font-size: 50px;
+    margin-top: 10px;
+}
