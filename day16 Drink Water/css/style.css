@@ -1,0 +1,99 @@
+*{
+    box-sizing: border-box;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+  
+    display: flex;
+    align-items: center;
+    background-color: royalblue;
+    flex-direction: column;
+    color: #fff;
+}
+
+h1{
+    font-size: 40px;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+.goal{
+    font-size: 20px;
+    margin-top: 10px;
+}
+
+.cup{
+    background-color: #fff;
+    color: #000;
+    border: 4px solid #144fc6;
+    display: flex;
+    flex-direction: column;
+    border-radius: 0 0 40px 40px;
+    overflow: hidden;
+    height: 330px;
+    width:150px;
+    margin: 30px 0;
+}
+
+.cup.cup-small{
+    height: 95px;
+    width: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0 0 15px 15px;
+    font-size: 14px;
+    text-align: center;
+    cursor: pointer;
+    background-color: rgba(255, 255,255, 0.7);
+    margin: 5px;
+    transition: .3s ease;
+    padding: 5px;
+}
+
+.cups{
+    display: flex;
+    width: 280px;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+
+}
+.cup.cup-small.fill{
+    background-color: #6ab3f8;
+    color: #fff;
+}
+
+.remained{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    text-align: center;
+    flex-wrap: wrap;
+    flex: 1;
+}
+.remained span{
+    font-size: 25px;
+    font-weight: bold;
+
+}
+.remained small{
+    font-size: 12px;
+    margin: 10px;
+}
+
+.percentage{
+    background-color: #6ab3f8;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    height: 0;
+    transition: .3s ease;
+    font-size: 30px;
+    font-weight: bold;
+}
