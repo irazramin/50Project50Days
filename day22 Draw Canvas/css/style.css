@@ -1,0 +1,43 @@
+*{
+    box-sizing: border-box;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    flex-direction: column;
+}
+
+canvas{
+    border: 3px solid steelblue;
+
+}
+
+.tool-box{
+    display: flex;
+    background-color: steelblue;
+    width: 804px;
+    border: 1px solid slateblue;
+    padding: 1rem;
+}
+
+.tool-box > *{
+    display: inline-flex;
+    padding: .25rem;
+    border: none;
+    margin: .25rem;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    width: 50px;
+    width: 50px;
+    background-color: snow;
+    cursor: pointer;
+}
+.tool-box > *:last-child{
+    margin-left: auto;
+}
