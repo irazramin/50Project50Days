@@ -1,0 +1,55 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: palevioletred;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    flex-direction: column;
+}
+
+button {
+    border: none;
+    padding: 15px 30px;
+    border-radius: 5px;
+    font-size: 15px;
+    color: palevioletred;
+    font-weight: bold;
+    background: lightcyan;
+    cursor: pointer;
+}
+
+button:hover {
+    color: black;
+    background-color: white;
+}
+
+button:focus {
+    outline: none;
+}
+
+button:active {
+    transform: scale(.98);
+}
+
+#toasts {
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+}
+
+#toasts .toast {
+  background-color: white;
+    padding: 10px 15px;
+    border: 1px solid black;
+    border-radius:10px ;
+    box-shadow: 0 10px 10px rgba(0, 0,0,0.4);
+    color: royalblue;
+    margin:  10px;
+}
