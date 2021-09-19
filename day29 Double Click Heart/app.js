@@ -3,6 +3,8 @@ const times = document.querySelector(".count");
 
 let clickTime = 0;
 let clickCount = 0;
+
+
 loveMe.addEventListener("click", (e) => {
   if (clickTime === 0) {
     clickTime = new Date().getTime();
@@ -16,6 +18,8 @@ loveMe.addEventListener("click", (e) => {
     }
   }
 });
+
+
 
 function createHeart(event) {
   const heart = document.createElement("i");
