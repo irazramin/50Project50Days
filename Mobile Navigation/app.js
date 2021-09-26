@@ -17,3 +17,6 @@ function hideAllContent() {
 function hideAllList() {
   listItems.forEach((item) => item.classList.remove("active"));
 }
+let arr = [];
+arr[40] = "Hello Peter";
+console.log(arr[4]);

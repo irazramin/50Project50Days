@@ -33,11 +33,11 @@ body {
 }
 
 
-.phone .content.show{
+.phone .content.show {
     opacity: 1;
 }
 
-nav{
+nav {
     position: absolute;
     bottom: 0;
     left: 0;
@@ -46,14 +46,15 @@ nav{
     margin-top: -6px;
 }
 
-nav ul{
+nav ul {
     list-style: none;
     display: flex;
     height: 60px;
     margin: 0;
     padding: 0;
 }
-nav li{
+
+nav li {
     flex: 1;
     padding: 10px;
     color: #777;
@@ -64,9 +65,9 @@ nav li{
 nav ul li p {
     font-size: 12px;
     margin: 2px 0;
-  }
-  
-  nav ul li:hover,
-  nav ul li.active {
+}
+
+nav ul li:hover,
+nav ul li.active {
     color: #8e44ad;
-  }
+}
