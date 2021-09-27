@@ -1,0 +1,86 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #f2f2f2;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 100vh;
+    background-color: rgba(255, 182, 193, 0.1);
+}
+
+.panel-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    padding: 30px;
+    max-width: 400px;
+    text-align: center;
+    background-color: #fff;
+    border-radius: 4px;
+}
+
+.ratings-container {
+    display: flex;
+    margin: 20px 0;
+}
+
+.rating {
+    flex: 1;
+    margin: 10px 5px;
+    padding: 20px;
+    cursor: pointer;
+}
+
+.rating:hover,
+.rating.active {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+}
+
+.rating img {
+    width: 40px;
+}
+
+.rating small {
+    font-size: 15px;
+    color: #777;
+    margin-top: 10px;
+
+}
+
+
+.rating:hover small,
+.rating.active small {
+    color: #111;
+}
+
+
+.btn {
+    background-color: #333;
+    border: none;
+    color: #fff;
+    padding: 12px 30px;
+    border-radius: 4px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.btn:active{
+    transform: scale(0.98);
+}
+.btn:focus{
+    outline: none;
+}
+
+.fa-heart{
+    color: red;
+    font-size: 30px;
+}
