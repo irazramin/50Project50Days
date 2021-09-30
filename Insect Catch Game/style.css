@@ -1,0 +1,142 @@
+@import url('https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #516dff;
+    color: #fff;
+    font-family: 'Press Start 2P', sans-serif;
+    height: 100vh;
+    overflow: hidden;
+    margin: 0;
+    text-align: center;
+}
+
+.screen {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+}
+
+.screen.up {
+    margin-top: -100vh;
+    transition: margin-top .3s ease-out;
+}
+
+.btn {
+    border: 0;
+    background-color: #fff;
+    font-family: inherit;
+    padding: 15px 30px;
+    cursor: pointer;
+    color: #516dff;
+}
+
+.btn:hover {
+    opacity: 0.9;
+}
+
+.choose-insect-btn img {
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+
+}
+
+.insects-list {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0;
+    list-style-type: none;
+    align-items: center;
+    justify-content: center;
+}
+
+.insects-list li {
+    margin: 20px;
+}
+
+.choose-insect-btn {
+    cursor: pointer;
+    background-color: transparent;
+    color: #fff;
+    border: 1px solid #fff;
+    font-family: inherit;
+    width: 150px;
+    height: 150px;
+}
+
+.choose-insect-btn:hover {
+    background-color: #fff;
+    color: #516dff;
+}
+
+.choose-insect-btn:active {
+    background-color: #f2f2f2;
+}
+
+.game-container {
+    position: relative;
+}
+
+.time,
+.score {
+    position: absolute;
+    top: 20px;
+
+}
+
+.time {
+    left: 20px;
+}
+
+.score {
+    right: 20px;
+}
+
+.message {
+    position: absolute;
+    line-height: 1.7;
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 100%;
+    padding: 20px;
+    text-align: center;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -150%);
+    z-index: 100;
+    opacity: 0;
+    transition: transform .4s ease-in;
+}
+
+.message.visible {
+    transform: translate(-50%, 150%);
+    opacity: 1;
+}
+
+.insect {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    transform: translate(-50%, -50%) scale(1);
+    transition: transform .3s ease-in-out;
+}
+
+.insect.caught {
+    transform: translate(-50%, -50%) scale(0);
+}
+
+.insect img {
+    width: 100px;
+    height: 100px;
+
+}
