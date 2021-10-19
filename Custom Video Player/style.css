@@ -1,0 +1,64 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+    background-color: #666;
+}
+
+.screen {
+    background-color: #000 !important;
+    cursor: pointer;
+    width: 60%;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+
+.control {
+    background-color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    width: 60%;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    color: #fff;
+}
+
+.btn {
+    border: 0;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.control .play {
+    color: #28a745;
+}
+
+.control .stop {
+    color: #dc3545;
+}
+
+.control .pause {
+    color: #28a745;
+}
+
+.control .timestamp{
+    margin-left: 10px;
+    font-weight: bold;
+    color: #fff;
+}
+@media (max-width:800px) {
+
+    .screen,
+    .control {
+        width: 90%;
+    }
+}
