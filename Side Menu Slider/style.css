@@ -1,0 +1,167 @@
+:root {
+    --primary-color: lightgreen;
+    --secondary-color: lightpink;
+    --modal-duration:1s;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    margin: 0;
+
+}
+
+body.show-menu {
+    transform: translate(200px);
+    transition: transform .5s ease;
+}
+
+nav {
+    background-color: var(--primary-color);
+    position: fixed;
+    height: 100vh;
+    z-index: 100;
+    width: 200px;
+    border-right: 2px solid rgba(200, 200, 200, 0.4);
+    transform: translateX(-100%);
+}
+
+nav .logo {
+    padding: 30px 0;
+    text-align: center;
+}
+
+nav .logo img {
+    width: 75px;
+    height: 75px;
+    border-radius: 50%;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+nav ul li {
+    padding: 30px;
+    border-bottom: 2px solid rgba(224, 89, 89, 0.33);
+}
+
+nav ul li:first-of-type {
+    border-top: 2px solid rgba(224, 89, 89, 0.33);
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #777;
+    font-size: 15px;
+
+}
+
+header {
+    background-color: var(--primary-color);
+    color: #fff;
+    text-align: center;
+    padding: 30px 0;
+    font-size: 130%;
+    position: relative;
+}
+
+input[type='submit'],
+button {
+    background-color: var(--secondary-color);
+    border: 0;
+    padding: 10px 20px;
+    font-size: 15px;
+    color: #777;
+    cursor: pointer;
+}
+
+.toggle {
+    position: absolute;
+    left: 20px;
+    top: 20px;
+}
+
+.container {
+    width: 800px;
+    max-width: 100%;
+    padding: 15px;
+    margin: 0 auto;
+}
+
+.model-container {
+    background-color: rgba(0, 0, 0, .2);
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: none;
+}
+.model-container.show-modal {
+    display: block;
+    opacity: 1;
+}
+.model {
+    background-color: #fff;
+    width: 400px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 100%;
+    overflow: hidden;
+    animation-name: modalanim;
+    animation-duration: var(--modal-duration);
+}
+
+
+
+.model-header {
+    background-color: var(--primary-color);
+    padding: 15px;
+}
+
+.model-header h3 {
+    margin: 0;
+    border-bottom: 1px solid #f7f7f7;
+}
+
+.model-content {
+    padding: 20px;
+}
+
+.model-form div {
+    margin: 20px 0;
+}
+
+.model-form label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.model-form input {
+    padding: 10px;
+}
+
+.close-btn {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    background-color: transparent;
+    font-size: 20px;
+}
+
+@keyframes modalanim {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
