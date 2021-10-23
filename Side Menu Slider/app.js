@@ -15,7 +15,7 @@ openModal.addEventListener('click',()=>{
 
 closeBtn.addEventListener('click',()=> {
     modal.classList.remove('show-modal');
-    console.log(123)
+
 })
 
 //close modal from outside
