@@ -1,0 +1,423 @@
+1
+00:00:00,270 --> 00:00:04,100
+OK so now going to start to work with the speech recognition API.
+
+2
+00:00:04,620 --> 00:00:10,920
+So as you could see here in the docs the speech recognition interface of the web speech API is the controller
+
+3
+00:00:10,920 --> 00:00:13,640
+interface for the recognition service.
+
+4
+00:00:13,680 --> 00:00:17,630
+This also handles a speech recognition event sent from the recognition service.
+
+5
+00:00:17,700 --> 00:00:22,500
+So it shows all the different properties and methods and stuff and what we're going to be working with
+
+6
+00:00:22,500 --> 00:00:23,670
+is the start method.
+
+7
+00:00:23,670 --> 00:00:28,290
+So this will start the recognition service and listen to any incoming audio.
+
+8
+00:00:28,290 --> 00:00:34,020
+So it also send a pop up to the browser to ask if you want to get permission to listen to your mike.
+
+9
+00:00:34,170 --> 00:00:38,370
+And then as far as events we're going to be listened for the results event.
+
+10
+00:00:38,400 --> 00:00:42,330
+This is fired off when the speech recognition returns a result.
+
+11
+00:00:42,330 --> 00:00:48,690
+So basically when you talk into the mike this will fire off and we can capture whatever said and then
+
+12
+00:00:48,810 --> 00:00:49,380
+what else.
+
+13
+00:00:49,380 --> 00:00:51,220
+We have the end event.
+
+14
+00:00:51,240 --> 00:00:55,950
+So this will be fired when the speech service has been disconnected.
+
+15
+00:00:56,730 --> 00:01:02,390
+And that's those are pretty much the main events and methods will be working with.
+
+16
+00:01:02,400 --> 00:01:10,110
+So let's jump into our JavaScript file here and the first thing I'm going to do is bring in the dorm
+
+17
+00:01:10,110 --> 00:01:13,800
+elements which in this case is just one we just want the message element.
+
+18
+00:01:13,890 --> 00:01:19,620
+So it's used document Dodds get element by D and has an I.D. of message.
+
+19
+00:01:19,650 --> 00:01:25,170
+So this is basically the output of whatever we want to tell the user if they need to go higher or whatever
+
+20
+00:01:25,170 --> 00:01:27,980
+and I'll also say whatever they speak into the mike.
+
+21
+00:01:28,140 --> 00:01:31,470
+So we need a random number between 1 and 100.
+
+22
+00:01:31,470 --> 00:01:39,300
+So let's go ahead and create a variable called random NUM and set that to a function called get random
+
+23
+00:01:39,840 --> 00:01:48,570
+number and then we're going to create that function down here get random number and to do this we're
+
+24
+00:01:48,570 --> 00:01:57,690
+going to return let's return and to generate a random decimal we can use math thought random and then
+
+25
+00:01:57,690 --> 00:02:02,940
+we can just multiply that by one hundred and then we want to round that down.
+
+26
+00:02:02,940 --> 00:02:09,500
+So let's go ahead and wrap this in our javascript math dot floor method.
+
+27
+00:02:09,510 --> 00:02:12,500
+Now this will give us zero through ninety nine.
+
+28
+00:02:12,510 --> 00:02:14,130
+So we want it to be one through 100.
+
+29
+00:02:14,130 --> 00:02:15,910
+So we're just going to add one on to that.
+
+30
+00:02:16,950 --> 00:02:17,280
+All right.
+
+31
+00:02:17,280 --> 00:02:29,070
+And then let's we'll do a console log up here of random num excuse me and then we'll just open up our
+
+32
+00:02:29,070 --> 00:02:35,360
+console you can see we get forty five to five ninety eight thirty to seventy 71.
+
+33
+00:02:35,430 --> 00:02:41,760
+So just keep generating a random number when the page loads and let's just keep this here so we can
+
+34
+00:02:41,760 --> 00:02:44,430
+see what the correct guess is.
+
+35
+00:02:44,430 --> 00:02:47,340
+So I'll just say it's the same number.
+
+36
+00:02:47,360 --> 00:02:50,430
+Cole and then we'll just put a you know.
+
+37
+00:02:50,430 --> 00:02:53,360
+So it just says no and then whatever the correct number is.
+
+38
+00:02:53,610 --> 00:03:00,420
+Now for the speech recognition we need to initialize a speech recognition object.
+
+39
+00:03:00,420 --> 00:03:05,360
+Now in some browsers you might need to use the Web Kit speech recognition.
+
+40
+00:03:05,370 --> 00:03:09,670
+Like I said this is still kind of an experimental technology.
+
+41
+00:03:09,720 --> 00:03:11,850
+It's actually go right here.
+
+42
+00:03:11,910 --> 00:03:23,820
+So I'm going to take window dot speech recognition and set that to window dot speech recognition or
+
+43
+00:03:24,600 --> 00:03:29,220
+in some cases it might be Web Kit speech recognition.
+
+44
+00:03:29,220 --> 00:03:35,990
+So I'll say window dot web kids speech recognition.
+
+45
+00:03:35,990 --> 00:03:36,270
+OK.
+
+46
+00:03:36,290 --> 00:03:44,910
+So whichever one is available to us now we need to initialize a variable with that with that object.
+
+47
+00:03:44,910 --> 00:03:45,990
+So we're gonna say let's.
+
+48
+00:03:45,990 --> 00:03:47,650
+Recognition.
+
+49
+00:03:47,770 --> 00:03:58,460
+So we're creating a new variable and we're going to initialize a new window dot speech recognition.
+
+50
+00:03:58,700 --> 00:03:58,970
+OK.
+
+51
+00:03:58,980 --> 00:04:04,310
+So this will give us an object to work with and the first thing we want to do is start.
+
+52
+00:04:04,320 --> 00:04:05,340
+So it's a start.
+
+53
+00:04:05,340 --> 00:04:08,860
+Recognition and game.
+
+54
+00:04:09,000 --> 00:04:13,650
+So the game is going to start as soon as it loads so we'll say recognition dot start.
+
+55
+00:04:13,680 --> 00:04:21,840
+So I showed you that method in the documentation and I'm gonna save this Hello OK.
+
+56
+00:04:21,850 --> 00:04:25,600
+So what happened is you can see that you can see the little microphone blink up top.
+
+57
+00:04:25,690 --> 00:04:27,630
+So it ran or it started.
+
+58
+00:04:27,640 --> 00:04:33,880
+It captured what I said into the mike and nothing else happens because we we haven't said anything to
+
+59
+00:04:33,880 --> 00:04:34,970
+happen yet.
+
+60
+00:04:34,990 --> 00:04:39,730
+So what we need to do now is listen for the result event.
+
+61
+00:04:39,730 --> 00:04:40,040
+OK.
+
+62
+00:04:40,060 --> 00:04:48,250
+So let's say speak result and we're going to take that recognition object and add an event listener
+
+63
+00:04:49,920 --> 00:04:52,870
+and we want to listen for an event called result.
+
+64
+00:04:53,050 --> 00:04:56,920
+And then once that happens we'll call a function called on speak.
+
+65
+00:04:57,980 --> 00:04:58,320
+OK.
+
+66
+00:04:58,350 --> 00:05:06,770
+So let's see this on speak we'll go and create right above the random number let's put a comment here.
+
+67
+00:05:06,820 --> 00:05:10,390
+Generate and number
+
+68
+00:05:13,830 --> 00:05:27,430
+so for this let's say capture or use or speak so function on speak.
+
+69
+00:05:27,990 --> 00:05:33,420
+And that's part of an event listener so we're going to pass in that event parameter and what we want
+
+70
+00:05:33,420 --> 00:05:34,110
+to do here.
+
+71
+00:05:34,140 --> 00:05:40,560
+Let's just console log what that event gives us hello.
+
+72
+00:05:40,700 --> 00:05:46,610
+So this is what it gives me after I start after it starts and we catch our result and then run this
+
+73
+00:05:46,610 --> 00:05:47,590
+function.
+
+74
+00:05:47,600 --> 00:05:54,570
+So this this contains a lot of stuff but what we want to target right here is the results.
+
+75
+00:05:54,570 --> 00:05:56,830
+Can you see inside results.
+
+76
+00:05:56,830 --> 00:06:02,000
+And it's really important to recognize the the structure of this because this is how we need how we're
+
+77
+00:06:02,000 --> 00:06:03,550
+gonna get what we actually said.
+
+78
+00:06:03,980 --> 00:06:10,120
+So in results is an array it's a speech recognition result array there's only one item.
+
+79
+00:06:10,150 --> 00:06:15,620
+So it's zero and then there's another array inside that called speech recognition alternative.
+
+80
+00:06:15,650 --> 00:06:17,000
+So that's another array.
+
+81
+00:06:17,090 --> 00:06:23,270
+And then there's a property called transcript and that's where our text is K or whatever we said in
+
+82
+00:06:23,270 --> 00:06:23,740
+this case.
+
+83
+00:06:23,750 --> 00:06:25,130
+Hello.
+
+84
+00:06:25,130 --> 00:06:33,470
+So to capture that let's go ahead and get rid of this and let's create a variable called message and
+
+85
+00:06:33,500 --> 00:06:40,190
+let's set that to to our event and then we want the results.
+
+86
+00:06:40,280 --> 00:06:40,570
+OK.
+
+87
+00:06:40,580 --> 00:06:47,360
+So we're going here then we want to go to arrays in both at the zero index.
+
+88
+00:06:47,360 --> 00:06:49,540
+So the first array helps.
+
+89
+00:06:49,910 --> 00:06:55,710
+And then the next array and then that array has a property called transcript.
+
+90
+00:06:55,890 --> 00:07:00,790
+OK so that should give us whatever it is we say so let's console log here.
+
+91
+00:07:00,800 --> 00:07:05,910
+Message Hello and there we go.
+
+92
+00:07:05,910 --> 00:07:09,130
+So now we can capture what is said into the microphone.
+
+93
+00:07:09,340 --> 00:07:12,920
+So pretty easy to get that functionality down.
+
+94
+00:07:12,940 --> 00:07:18,400
+Now one thing you might notice is it didn't prompt me at all to use my microphone and that's because
+
+95
+00:07:18,400 --> 00:07:22,630
+I've already dealt with this app on this host.
+
+96
+00:07:22,630 --> 00:07:30,310
+You will get a prompt to two to allow your microphone to basically get the input to your mike.
+
+97
+00:07:30,310 --> 00:07:30,600
+OK.
+
+98
+00:07:30,610 --> 00:07:39,880
+So now what we want to do is call two functions here the first one is going to be right message and
+
+99
+00:07:39,880 --> 00:07:46,690
+what that's going to do is it's going to just write out what we speak and then we also want to do we
+
+100
+00:07:46,690 --> 00:07:51,750
+want to check the number which is the point of the game and we're going to pass our message into that.
+
+101
+00:07:51,760 --> 00:07:54,090
+And that's going to check to see if it's a valid number.
+
+102
+00:07:54,160 --> 00:07:59,320
+Check to see if it's in between this range and check to see if it matches the actual number.
+
+103
+00:07:59,320 --> 00:07:59,640
+All right.
+
+104
+00:07:59,650 --> 00:08:04,460
+So I'm going to comment these out right now and save because we're gonna do these in the next video.
+
+105
+00:08:04,750 --> 00:08:05,070
+OK.
+
+106
+00:08:05,080 --> 00:08:09,100
+So when next few will create these two functions and we'll go from there.

@@ -1,0 +1,101 @@
+1
+00:00:00,450 --> 00:00:01,380
+Hey what's going on guys.
+
+2
+00:00:01,380 --> 00:00:02,790
+Welcome to your next project.
+
+3
+00:00:02,820 --> 00:00:07,680
+So this is gonna be a number guessing game but instead of typing in a number we're actually going to
+
+4
+00:00:07,680 --> 00:00:11,100
+speak it and we're gonna use the speech recognition API.
+
+5
+00:00:11,100 --> 00:00:12,840
+Now the reason you see this on my screen.
+
+6
+00:00:12,840 --> 00:00:17,780
+Congrats you've guessed the numbers because as soon as I start talking IT'S GOING TO RECORD.
+
+7
+00:00:17,850 --> 00:00:24,400
+RECORD MY VOICE I've already clicked a little notification where you can allow it to access your microphone.
+
+8
+00:00:24,420 --> 00:00:27,990
+OK so basically we can guess a number between 1 and 100.
+
+9
+00:00:28,020 --> 00:00:33,870
+If it's lower than the number it'll tell us to go higher if we're higher it'll tell us to go lower.
+
+10
+00:00:33,960 --> 00:00:37,450
+And if it's not a number it'll tell us that it's not a valid number.
+
+11
+00:00:37,470 --> 00:00:39,530
+It'll also tell us if we're out of range.
+
+12
+00:00:39,540 --> 00:00:44,490
+So what I'm gonna do is click the play again button and then I'd give you a demo of the app and then
+
+13
+00:00:44,490 --> 00:00:47,260
+the console you can see the correct number down here.
+
+14
+00:00:47,310 --> 00:00:51,080
+So let's click Play Again 40
+
+15
+00:00:53,780 --> 00:00:54,380
+
+16
+00:00:56,750 --> 00:00:57,500
+
+17
+00:01:00,280 --> 00:01:00,790
+Hello
+
+18
+00:01:03,650 --> 00:01:05,830
+47.
+
+19
+00:01:06,070 --> 00:01:06,580
+And there you go.
+
+20
+00:01:06,610 --> 00:01:07,950
+So we guess the number.
+
+21
+00:01:07,960 --> 00:01:08,220
+OK.
+
+22
+00:01:08,260 --> 00:01:10,640
+So that's the project that we'll be building.
+
+23
+00:01:10,690 --> 00:01:15,870
+And again we'll be using the speech recognition API which still is in experimental mode.
+
+24
+00:01:15,880 --> 00:01:21,010
+In fact if you're using you want to use Chrome or Firefox and if you're using firefox you may have to
+
+25
+00:01:21,010 --> 00:01:27,250
+set a flag which I'll show you in the next video and then we'll start on the team Alan CSX and then
+
+26
+00:01:27,250 --> 00:01:28,840
+we'll move to the javascript.

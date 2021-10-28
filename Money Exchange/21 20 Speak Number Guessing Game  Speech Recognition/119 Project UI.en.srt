@@ -1,0 +1,407 @@
+1
+00:00:00,420 --> 00:00:04,320
+All right so we're going to start on our speak no guesser app.
+
+2
+00:00:04,320 --> 00:00:10,090
+Now this speech recognition API that we're using is it's an experimental technology.
+
+3
+00:00:10,470 --> 00:00:14,170
+So it's not widely supported it's fully supported in Chrome.
+
+4
+00:00:14,490 --> 00:00:17,790
+If you're on Firefox there is a flag that you'll have to enable.
+
+5
+00:00:17,790 --> 00:00:19,920
+So I'm just going to show you how to do that real quick.
+
+6
+00:00:19,920 --> 00:00:23,230
+So I'm just going to open up my Firefox browser and in the bra.
+
+7
+00:00:23,250 --> 00:00:24,590
+And there you are Albar here.
+
+8
+00:00:24,590 --> 00:00:32,250
+I'm just going to say about Colon config and then accept the risk and continue it's just it just allows
+
+9
+00:00:32,250 --> 00:00:38,670
+us to change flags in the browser and we're going to search for a speech recognition or just speech
+
+10
+00:00:38,730 --> 00:00:39,900
+and let's see.
+
+11
+00:00:39,960 --> 00:00:43,860
+We want to set this right here.
+
+12
+00:00:43,860 --> 00:00:48,340
+MEDIA WEB speech recognition force enable you want to set that to true.
+
+13
+00:00:48,360 --> 00:00:50,300
+You can see mind's already set to true.
+
+14
+00:00:50,400 --> 00:00:52,980
+Yours will probably be set to false.
+
+15
+00:00:52,980 --> 00:00:58,120
+So you just want to click this right here and that will toggle from false to true.
+
+16
+00:00:58,350 --> 00:01:03,720
+So you want to make sure that that and this one here this recognition enable is true as well in order
+
+17
+00:01:03,720 --> 00:01:10,200
+for this to work and in order to basically be able to use your microphone in the application.
+
+18
+00:01:10,200 --> 00:01:10,430
+All right.
+
+19
+00:01:10,440 --> 00:01:17,730
+So let's jump into v as code and as far as my files I just have my main three my index SPY style sheet
+
+20
+00:01:17,760 --> 00:01:24,780
+my script and then I have two images in the I AMG folder ones the background image and one is the microphone
+
+21
+00:01:24,810 --> 00:01:26,430
+image to PMG.
+
+22
+00:01:26,460 --> 00:01:30,560
+OK so let's start off with the H team L which is gonna be really really simple.
+
+23
+00:01:30,720 --> 00:01:41,060
+So let's generate a boilerplate here and we'll say no or let's say speak no guests.
+
+24
+00:01:41,210 --> 00:01:45,120
+I mean I could call it something a little better but that's fine whatever.
+
+25
+00:01:45,120 --> 00:01:55,770
+So let's add in our link to our style sheet style CSX and then let's add in our script source which
+
+26
+00:01:55,770 --> 00:02:00,510
+is going to be script J.S. and the each team is going to be really simple for us.
+
+27
+00:02:00,510 --> 00:02:06,650
+We're just going to have our image of the mike which is I am G slash Mike PMG.
+
+28
+00:02:06,750 --> 00:02:14,370
+I'll just say I don't know speak for the old and then underneath that we're gonna have our H one and
+
+29
+00:02:14,370 --> 00:02:26,070
+our each one is going to say guess a number between one and one hundred and then we're gonna have an
+
+30
+00:02:26,100 --> 00:02:36,090
+h three and just say speak number into your microphone.
+
+31
+00:02:36,090 --> 00:02:43,230
+And then the last thing we're gonna have is just a div with the I.D. of M.S. G for message and a class
+
+32
+00:02:43,230 --> 00:02:44,490
+of M.S. G.
+
+33
+00:02:44,490 --> 00:02:51,120
+Now ultimately this is gonna be empty because what is gonna be put in here is going to be generated
+
+34
+00:02:51,120 --> 00:02:58,180
+into the DOM through javascript it's gonna be like what we say and if we're correct and stuff like that.
+
+35
+00:02:58,200 --> 00:03:05,720
+So for now I'm just going to hardcoded in so we'll put a div here and it's going to say you said coal
+
+36
+00:03:05,730 --> 00:03:12,040
+and then underneath that we'll have a span and I'm going to give this a class of box and it's gonna
+
+37
+00:03:12,060 --> 00:03:17,970
+have the number I'll just put a 20 in here for now and then underneath that it'll say like go lower
+
+38
+00:03:18,000 --> 00:03:19,660
+go higher or whatever.
+
+39
+00:03:19,740 --> 00:03:22,980
+So that's gonna be put into a div.
+
+40
+00:03:23,000 --> 00:03:25,410
+Let's just say go higher.
+
+41
+00:03:25,410 --> 00:03:26,630
+So that's what it will look like.
+
+42
+00:03:26,640 --> 00:03:36,320
+So we'll save that and let's open this up in life server K and then I'm just going to make this smaller
+
+43
+00:03:38,840 --> 00:03:43,520
+that small if I can grab onto it all right.
+
+44
+00:03:43,520 --> 00:03:44,820
+So we have the H SYMBOL.
+
+45
+00:03:44,820 --> 00:03:47,780
+Now we're gonna add our style which is pretty simple.
+
+46
+00:03:47,810 --> 00:03:53,820
+First thing we'll do is just set our box sizing on everything to border box.
+
+47
+00:03:55,130 --> 00:04:00,260
+And then for the body we'll set our background.
+
+48
+00:04:00,260 --> 00:04:09,800
+So I'm going to set a color in an image so the color will be hexadecimal to F 3 5 4 2 and then for the
+
+49
+00:04:09,800 --> 00:04:16,850
+image we're gonna say you are L and it's gonna be in the image folder and then be g dot J Peg let's
+
+50
+00:04:16,850 --> 00:04:25,610
+set a no repeat and let's set the positioning to left left center and we want to cover.
+
+51
+00:04:26,540 --> 00:04:27,060
+Okay.
+
+52
+00:04:27,100 --> 00:04:32,930
+And we wanted to take up the whole thing so let's say Men height on the body will be 100 viewport heights
+
+53
+00:04:33,620 --> 00:04:37,230
+and we'll add our color of white.
+
+54
+00:04:38,590 --> 00:04:45,440
+Let's just close that sidebar up and I want everything to be in the middle so I'm going to display flex
+
+55
+00:04:45,440 --> 00:04:51,920
+and also select set the Flex direction to column K and then to align everything to the middle we'll
+
+56
+00:04:51,920 --> 00:05:00,570
+do a line item center let's do justify content center and let's do text align center.
+
+57
+00:05:00,760 --> 00:05:01,010
+OK.
+
+58
+00:05:01,100 --> 00:05:08,810
+Some puts everything in the middle and then we'll add a margin zero and then just apply a font so let's
+
+59
+00:05:08,810 --> 00:05:15,400
+use we'll just use aerial here K to make this a little wider.
+
+60
+00:05:17,690 --> 00:05:23,050
+And if you want to add a media query to make the text smaller on really small screens you can do that
+
+61
+00:05:23,050 --> 00:05:28,270
+if you want but I've done that in enough projects it's it's pretty simple so I'm not going to bother
+
+62
+00:05:28,270 --> 00:05:29,960
+doing it here.
+
+63
+00:05:30,100 --> 00:05:35,370
+Let's let's fix the headings because these are kind of far apart here that the each one in the each
+
+64
+00:05:35,370 --> 00:05:35,750
+three.
+
+65
+00:05:36,070 --> 00:05:46,220
+So we'll just take the H one and h three and let's just set a margin bottom to zero looks like I put
+
+66
+00:05:46,220 --> 00:05:47,450
+two ends in no
+
+67
+00:05:51,830 --> 00:05:52,270
+OK.
+
+68
+00:05:52,280 --> 00:05:56,900
+Now there is gonna be part of this that we can't see right now.
+
+69
+00:05:56,900 --> 00:06:02,390
+Once we guessed the correct number we're gonna replace everything in the body with just a paragraph
+
+70
+00:06:02,420 --> 00:06:07,340
+that says you've guessed the correct number and it's gonna have a play again button.
+
+71
+00:06:07,340 --> 00:06:15,080
+So I'm just gonna add some style for the paragraph I'm just gonna change the line height to one point
+
+72
+00:06:15,080 --> 00:06:22,820
+five spread the line a little bit and then just set the margin to zero and then for the play button
+
+73
+00:06:23,060 --> 00:06:31,280
+so it'll have a class of play B T N or let's play again.
+
+74
+00:06:31,490 --> 00:06:39,620
+So this is just gonna have a padding of eight on the top and bottom in 15 on the sides and then I'm
+
+75
+00:06:39,620 --> 00:06:49,070
+gonna just remove the border set the background set the background to a light grey let's do f for three
+
+76
+00:06:49,070 --> 00:07:00,110
+times and then just make it rounded radius 5 pixels and just set a margin top to bring it down a little
+
+77
+00:07:00,110 --> 00:07:03,360
+bit so we'll set that to 10 pixels.
+
+78
+00:07:03,420 --> 00:07:09,620
+OK now let's work on this this whole part right here which is the message.
+
+79
+00:07:09,830 --> 00:07:14,140
+So for the message itself I missed G class.
+
+80
+00:07:14,140 --> 00:07:17,160
+I'm going to set the font size.
+
+81
+00:07:17,270 --> 00:07:21,820
+We'll do one point five m and m unit is just it's relatable to its parent.
+
+82
+00:07:21,860 --> 00:07:25,850
+So it's going to be one point five times whatever the parent font is.
+
+83
+00:07:26,090 --> 00:07:31,340
+And then let's set a margin top to move it down and I'll set that to 40 pixels.
+
+84
+00:07:32,720 --> 00:07:38,540
+OK now for the box number the number has a box class.
+
+85
+00:07:38,540 --> 00:07:42,620
+So I want to have like a you know an outline or a border around that.
+
+86
+00:07:42,620 --> 00:07:52,400
+So let's say border and let's do one pixel solid and the color will be d e three times so really light
+
+87
+00:07:52,400 --> 00:07:58,970
+gray and I'm going to display it as an inline block because if you recall it's a span which is by default
+
+88
+00:07:58,970 --> 00:07:59,930
+it's in line.
+
+89
+00:07:59,990 --> 00:08:04,250
+And I want to be able to add margin padding so I'll set that to inline block.
+
+90
+00:08:04,250 --> 00:08:09,930
+I'm going to make the font size a little bigger so it's two 30 pixels.
+
+91
+00:08:09,950 --> 00:08:16,060
+And then let's set the margin to 20 pixels and we'll set the padding to 10 pixels.
+
+92
+00:08:16,450 --> 00:08:18,780
+OK so now I get that little box around it.
+
+93
+00:08:18,950 --> 00:08:22,550
+And that should be it for the for the styling.
+
+94
+00:08:22,550 --> 00:08:22,790
+All right.
+
+95
+00:08:22,790 --> 00:08:24,970
+So not too bad at all.
+
+96
+00:08:24,980 --> 00:08:32,630
+So what I want to do next can close these files up at least that we can get rid of the three lines in
+
+97
+00:08:32,630 --> 00:08:37,790
+here because like I said this is going to get added with the javascript so we can actually get rid of
+
+98
+00:08:37,790 --> 00:08:40,250
+that now.
+
+99
+00:08:40,340 --> 00:08:40,660
+OK.
+
+100
+00:08:40,670 --> 00:08:43,820
+So our UI is all set in the next video.
+
+101
+00:08:43,820 --> 00:08:49,820
+We're gonna go ahead and start to implement the speech recognition API generate a random number and
+
+102
+00:08:49,880 --> 00:08:50,780
+all that good stuff.
